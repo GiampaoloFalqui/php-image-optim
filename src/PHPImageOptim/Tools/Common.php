@@ -12,6 +12,7 @@ class Common
     protected $originalFileSize = '';
     protected $finalFileSize = '';
     protected $optimisationLevel = 1;
+    protected $customOptions = '';
 
     /**
      * Sets the path of the executable
@@ -28,6 +29,20 @@ class Common
         }
 
         $this->binaryPath = $binaryPath;
+        return $this;
+    }
+
+    /**
+     * Sets the custom options of the executable (optional)
+     *
+     * @param string $options
+     *
+     * @return $this
+     * @throws Exception
+     */
+    public function setOptions($options = '')
+    {
+        $this->customOptions = $options;
         return $this;
     }
 
